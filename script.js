@@ -246,4 +246,17 @@
       });
     });
   });
+
+  /* ---------- Fullscreen для видео сцены ---------- */
+const sceneVideo = document.querySelector('.scene__video');
+if (sceneVideo) {
+  // Двойной клик по видео — toggle fullscreen
+  sceneVideo.addEventListener('dblclick', () => {
+    if (!document.fullscreenElement) {
+      sceneVideo.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  });
+}
 })();
